@@ -4,9 +4,28 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {FiSettings} from 'react-icons/fi';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
 import { registerLicense } from '@syncfusion/ej2-base';
+{/*components */}
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
-
+import Footer from './components/Footer'
+import ThemeSettings from './components/ThemeSettings'
+{/*pages */}
+import Ecommerce from './pages/Ecommerce';
+import Orders from './pages/Orders';
+import Employees from './pages/Employees'
+import Kanban from './pages/Kanban';
+import ColorPicker from './pages/ColorPicker';
+import Calendar from './pages/Calendar';
+import Customers from './pages/Customers';
+import Editor from './pages/Editor';
+import Line from './pages/Charts/Line';
+import Bar from './pages/Charts/Bar';
+import Area from './pages/Charts/Area';
+import Pie from './pages/Charts/Pie';
+import Financial from './pages/Charts/Financial';
+import ColorMapping from './pages/Charts/ColorMapping';
+import Pyramid from './pages/Charts/Pyramid';
+import Stacked from './pages/Charts/Stacked';
 
 registerLicense('ORg4AjUWIQA/Gnt2VVhhQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdkBhUH5Xc3NQRGFYWEY=')
 
@@ -47,6 +66,32 @@ function App() {
           >
             <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
               <Navbar/>
+            </div>
+            {/*routing */}
+            <div>
+              <Routes>
+                {/*dashboard home*/}
+                <Route path="/" element={(<Ecommerce/>)}/>
+                <Route path="/ecommerce" element={(<Ecommerce/>)} />
+                {/**pages */}
+                <Route path="/orders" element={(<Orders/>)} />
+                <Route path="/employees" element={(<Employees/>)} />
+                <Route path="/customers" element={(<Customers/>)} />
+                {/**apps */}
+                <Route path="/kanban" element={(<Kanban/>)} />
+                <Route path="/editor" element={(<Editor/>)} />
+                <Route path="/calendar" element={(<Calendar/>)} />
+                <Route path="/colorpicker" element={(<ColorPicker/>)} />
+                {/*charts*/}
+                <Route path="/line" element={(<Line/>)} />
+                <Route path="/area" element={(<Area/>)} />
+                <Route path="/bar" element={(<Bar/>)} />
+                <Route path="/pie" element={(<Pie/>)} />
+                <Route path="/financial" element={(<Financial/>)} />
+                <Route path="/colormapping" element={(<ColorMapping/>)} />
+                <Route path="/pyramid" element={(<Pyramid/>)} />
+                <Route path="/stacked" element={(<Stacked/>)} />
+              </Routes>
             </div>
           </div>
         </div>
