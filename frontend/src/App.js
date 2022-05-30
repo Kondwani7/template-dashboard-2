@@ -5,6 +5,7 @@ import {FiSettings} from 'react-icons/fi';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
 import { registerLicense } from '@syncfusion/ej2-base';
 import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
 
 
 registerLicense('ORg4AjUWIQA/Gnt2VVhhQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdkBhUH5Xc3NQRGFYWEY=')
@@ -36,7 +37,18 @@ function App() {
               <Sidebar/>
             </div>
           )}
-          {/*navigation */}
+          {/*navigation bar*/}
+          <div
+            className={
+              activeMenu 
+              ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-72 w-full' 
+              : 'bg-main-bg dark:bg-main-dark-bg w-full min-h-screen flex-2'
+            }
+          >
+            <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
+              <Navbar/>
+            </div>
+          </div>
         </div>
       </BrowserRouter>
     </div>
