@@ -12,20 +12,20 @@ import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
-import avatar from '../public/img/avatar.jpg';
-import avatar2 from '../public/img/avatar2.jpg';
-import avatar3 from '../public/img/avatar3.png';
-import avatar4 from '../public/img/avatar4.jpg';
-import avatar5 from '../public/img/avatar5.jpeg';
-import product1 from '../public/img/product1.jpg';
-import product2 from '../public/img/product2.jpg';
-import product3 from '../public/img/product3.jpg';
-import product4 from '../public/img/product4.jpg';
-import product5 from '../public/img/product5.jpg';
-import product6 from '../public/img/product6.jpg';
-import product7 from '../public/img/product7.jpg';
-import product8 from '../public/img/product8.jpg';
-import product9 from '../public/img/product9.jpg';
+import avatar from './avatar.jpg';
+import avatar2 from './avatar2.jpg';
+import avatar3 from './avatar3.png';
+import avatar4 from './avatar4.jpg';
+import avatar5 from './avatar5.jpeg';
+import product1 from './product1.jpg';
+import product2 from './product2.jpg';
+import product3 from './product3.jpg';
+import product4 from './product4.jpg';
+import product5 from './product5.jpg';
+import product6 from './product6.jpg';
+import product7 from './product7.jpg';
+import product8 from './product8.jpg';
+import product9 from './product9.jpg';
 export const gridOrderImage = (props) => (
   <div>
     <img
