@@ -31,9 +31,8 @@ const NavButton = ({title, customFunc, icon, color, dotColor}) => (
       <span
         style={{background:dotColor}}
         className='absolute inline-flex rounded-full h-2 w-2 right-2 top-2'
-      >
+      />
         {icon}
-      </span>
     </button>
   </TooltipComponent>
 )
@@ -68,7 +67,7 @@ const Navbar = () => {
 
   return (
     <div className='flex justify-between p-2 md:ml-6 md:mr-6 relative'>
-      <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu size={32}/>}/>
+      <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu size={25}/>}/>
       <div  className='flex'>
         <NavButton title='Cart' customFunc={() => handleClick('cart')} color={currentColor} icon={<FiShoppingCart/>}/>
         <NavButton title='Chat' dotColor='#03C9D7' customFunc={() => handleClick('chat')} color={currentColor} icon={<BsChatLeft/>}/>
@@ -79,8 +78,9 @@ const Navbar = () => {
             onClick={()=> handleClick('userProfile')}
           >
             <img
-              className='rounded-full w-8 h-8'
+              className='rounded-full w-10 h-10'
               src={avatar}
+              
               alt="user-profile" 
             />
           </div>
