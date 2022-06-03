@@ -221,8 +221,74 @@ const Ecommerce = () => {
             </div>
         </div>
       </div>
-      {/*new section */}
-      
+      {/*weekly stats */}
+      <div className='flex flex-wrap justify-center'>
+        <div className='md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg
+          rounded-2xl p-6 m-3'>
+          <div className='flex justify-between'>
+            <p className='text-xl font-semibold'>Weekly Stats</p>
+            <button type='button' className='text-xl ml-2 font-semibold text-gray-500'>
+                <IoIosMore/>
+            </button>
+          </div>
+          {/*items */}
+          <div className='mt-10'>
+            {weeklyStats.map((item) => {
+              <div key={item.title} className='flex justify-between mt-4 w-full'>
+                <div className='flex gap-4'>
+                  <button 
+                    type='button'
+                    style={{background: item.iconBg}}
+                    className='text-2xl hover:drop-shadow-xl text-white rounded-full p-3' 
+                  >
+                    {item.icon}
+                  </button>
+                  <div>
+                    <p className='text-md font-semibold'>{item.title}</p>
+                    <p className='text-sm text-gray-400'>{item.desc}</p>
+                  </div>
+                </div>
+                <p className={`text-${item.pcColor}`}>{item.amount}</p>
+              </div>
+            })}
+            {/*graph */}
+            <div className='mt-4'>
+              <SparkLine currentColor={currentColor} id='area-sparkLine' height='160px' type="Area" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)"/>
+            </div>
+          </div>
+        </div>
+        {/*medical pro branding */}
+        <div className='w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg
+          rounded-2xl p-6 m-3'
+        >
+          <div className='flex justify-between'>
+            <p className='text-xl font-semibold'>Medicalpro Branding</p>
+            <button
+              type='button'
+              className='text-xl ml-2 font-semibold text-gray-400'
+            >
+              <IoIosMore/>
+            </button>
+          </div>
+          <p 
+            className='text-xs cursor-pointer hover:drop-shaow-xl mt-10
+              font-semibold rounded-lg w-24 bg-orange-400 py-0.5 px-2 text-gray-200'
+          >
+          16 APR, 2021
+          </p>
+          {/*items */}
+          <div className='flex gap-4 border-b-1 border-color mt-6'>
+            {medicalproBranding.data.map((item) => (
+              <div key={item.title} className='border-r-1 border-color pr-4 pb-2'>
+                <p className='text-sm text-gray-400'>{item.title}</p>
+                <p className='text-sm'>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          {/*team section */}
+          <div></div>
+        </div>
+      </div>
     </div>
       
       
