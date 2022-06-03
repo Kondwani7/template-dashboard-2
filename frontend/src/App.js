@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {FiSettings} from 'react-icons/fi';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
@@ -28,15 +28,39 @@ import Stacked from './pages/Charts/Stacked';
 registerLicense('ORg4AjUWIQA/Gnt2VVhhQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdkBhUH5Xc3NQRGFYWEY=')
 
 function App() {
-  const activeMenu = true;
+  const [currentColor, setCurrentColor] = useState('#03C9D7');
+  const [currentMode, setCurrentMode] = useState('Light');
+  const [themeSettings, setThemeSettings] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(true);
+
+  const setMode = (e) => {
+    setCurrentMode(e.target.value);
+    localStorage.setItem('themeMode', e.target.value);
+  };
+
+  const setColor = (color) => {
+    setCurrentColor(color);
+    localStorage.setItem('colorMode', color);
+  };
+
+  useEffect(() => {
+    const currentColor = localStorage.getItem('colorMode');
+    const currentThemeMode = localStorage.getItem('themeMode');
+    if(currentThemeMode && currentThemeMode) {
+      setCurrentColor(currentColor);
+      setCurrentMode(currentMode);
+    }
+  }, [])
+
   return (
-    <div>
+    <div className={currentMode === 'Dark' ? 'dark': ''}>
       <BrowserRouter>
         <div className='flex relative dark:bg-main-dark-bg'>
           <div className='fixed right-4 bottom-4' style={{zIndex:'1000'}}>
             <TooltipComponent content="Settings" position="Top">
               <button
                type="button"
+               onClick={() => setThemeSettings(true)}
                style={{background:"blue" ,borderRadius:'50%'}}
                className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray" 
               >
@@ -67,6 +91,7 @@ function App() {
             </div>
             {/*routing */}
             <div>
+              {themeSettings && (<ThemeSettings/>)}
               <Routes>
                 {/*dashboard home*/}
                 <Route path="/" element={(<Ecommerce/>)}/>
@@ -91,6 +116,7 @@ function App() {
                 <Route path="/stacked" element={(<Stacked/>)} />
               </Routes>
             </div>
+            <Footer/>
           </div>
         </div>
       </BrowserRouter>
