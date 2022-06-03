@@ -324,6 +324,39 @@ const Ecommerce = () => {
           </div>
         </div>
         {/*daily activties */}
+        <div 
+          className='w-400 bg-white dark:text-gray-200 dark:secondary-dark-bg
+            rounded-2xl p-6 m-3'
+        >
+          <div className='flex justify-between'>
+            <p className='text-xl font-semibold'> Daily Activites</p>
+            <button 
+              type='button' 
+              className='ml-2 text-xl font-semibold text-gray-500'
+            >
+              <IoIosMore/>
+            </button>
+          </div>
+          <div className='mt-10'>
+              <img className='md:w-96 h-50' src={product9} alt=""/>
+              <div className='mt-8'>
+                <p className='font-semibold text-lg'>New Product v18 coming soon</p>
+                <p className='text-gray-400'>By Kdee Michaels</p>
+                <p className='mt-4 text-sm text-gray-400'>
+                  Small description of daily activities for the dashboard. nothing more some 
+                  boiler plate text. Use for your own devices
+                </p>
+                <div className='mt-3'>
+                  <Button 
+                    color="white"
+                    bgColor={currentColor}
+                    text="Read More"
+                    borderRadius="10px"
+                  />
+                </div>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
       
