@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { MdOutlineCancel } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-import {cartdata} from '../data/dummy'
-import {Button} from './Button';
+import {cartData} from '../data/dummy'
+import Button from '../components/Button';
 
 const Cart = () => {
   const [currentColor, setCurrentColor] = useState('#03C9D7');
